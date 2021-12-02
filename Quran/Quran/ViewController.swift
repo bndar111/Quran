@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return soar.count
@@ -25,12 +26,14 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
     
     @IBOutlet weak var tableView: UITableView!
     var reuslt = Quran()
+
     var soar : [Sorah] = []
     let session = URLSession.shared
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         fetchData()
         tableView.delegate = self
         tableView.dataSource = self
@@ -53,20 +56,24 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         //        let url = "https://api.quran.com/api/v4/chapters?language=en"
         //        let request = URLRequest(url: URL(string: url)!)
         session.dataTask(with: request) { (data, res, err) in
+
             
             do {
                 let jsonDecoder = JSONDecoder()
                 let decodedRes = try jsonDecoder.decode(Quran.self, from: data!)
+
                 self.reuslt = decodedRes
                 print(decodedRes)
                 
                 for s in self.reuslt.chapters {
                     self.soar.append(s)
                     print(s)
+
                 }
             } catch {
                 print(err?.localizedDescription)
             }
+
         }.resume()
         DispatchQueue.main.async {
             self.tableView.reloadData()
