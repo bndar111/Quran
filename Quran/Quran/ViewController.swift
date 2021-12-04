@@ -22,11 +22,12 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         cell.verses_count.text = String(soar[indexPath.row].verses_count)
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        200
+    }
     
     @IBOutlet weak var tableView: UITableView!
     var reuslt = Quran()
-
     var soar : [Sorah] = []
     let session = URLSession.shared
     
@@ -71,7 +72,7 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
 
                 }
             } catch {
-                print(err?.localizedDescription)
+                print(err?.localizedDescription as Any)
             }
 
         }.resume()
