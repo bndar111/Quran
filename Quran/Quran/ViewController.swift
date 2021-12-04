@@ -22,7 +22,9 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
     @IBOutlet weak var tableView: UITableView!
     var reuslt = Quran()
     var soar : [Sorah] = []
@@ -75,10 +77,13 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
     
 }
 class TableCell : UITableViewCell {
-    @IBOutlet weak var id: UILabel!
+
     
+ 
     @IBOutlet weak var revelation_place: UILabel!
     @IBOutlet weak var name_arabic: UILabel!
     
+    @IBOutlet weak var id: UILabel!
+   
     @IBOutlet weak var verses_count: UILabel!
 }
