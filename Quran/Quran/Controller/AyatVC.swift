@@ -11,46 +11,38 @@ class AyatVC: UIViewController {
 
     var api : API = API()
     var ayat : [Ayah] = []
-//    var ayat : [String] = []
+    var sorahNum = "1"
+
     @IBOutlet weak var contentLbl: UILabel!
    
     
-    @IBOutlet weak var pageNumLbl: UILabel!
+    @IBOutlet var pageNum : UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        api.fetchAyat("67", "", "", "", "", "")
+        api.fetchAyat(sorahNum, "", "", "", "", "")
         getAyat()
-        
-//        view.layer.borderWidth = 2
-//        view.layer.borderColor = UIColor.red.cgColor
+        print(sorahNum)
+
         contentLbl.text = "Loading Ayat AlQuran"
+        pageNum.text = sorahNum
     }
     func getAyat(){
-//        defer {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//
-////                self.contentLbl.text = self.ayat.joined(separator: "(*)")
-//            }
-//        }
+        defer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                let str = self.ayat.map{"\($0.text_uthmani_simple) ⦕\($0.verse_key.split(separator: ":").last!)⦖ "}
+                self.contentLbl.text = str.joined()
+            }
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
         
             for ayah in self.api.ayat{
-//                self.ayat.append(ayah.text_uthmani_simple)
                 self.ayat.append(ayah)
                 print(ayah.text_uthmani_simple + ayah.verse_key.split(separator: ":").last!)
-            }
-            let str = self.ayat.map{"\($0.text_uthmani_simple) ⦕\($0.verse_key.split(separator: ":").last!)⦖ "}
-            
-            self.contentLbl.text = str.joined()
-
-//            print(self.ayat[0...6])
-
                 
-            
-            
+            }
         }
         
     }
@@ -67,23 +59,3 @@ class AyatVC: UIViewController {
     */
 
 }
-//@IBDesignable extension UIView {
-//    @IBInspectable var borderColor: UIColor? {
-//        get {
-//            guard let cgColor = layer.borderColor else {
-//                return nil
-//            }
-//            return UIColor(cgColor: cgColor)
-//        }
-//        set { layer.borderColor = newValue?.cgColor }
-//    }
-//
-//    @IBInspectable var borderWidth: CGFloat {
-//        get {
-//            return layer.borderWidth
-//        }
-//        set {
-//            layer.borderWidth = newValue
-//        }
-//    }
-//}
