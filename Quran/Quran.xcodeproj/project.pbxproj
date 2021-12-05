@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		1BA87330275AC9D0006DEEAB /* AyatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA8732F275AC9D0006DEEAB /* AyatVC.swift */; };
+
 		9663E1802758DD0100D85379 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663E17F2758DD0100D85379 /* TableViewController.swift */; };
 		96B47E0E2757EA4C00A235F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B47E0D2757EA4C00A235F8 /* AppDelegate.swift */; };
 		96B47E102757EA4C00A235F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B47E0F2757EA4C00A235F8 /* SceneDelegate.swift */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		1BA8732F275AC9D0006DEEAB /* AyatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AyatVC.swift; path = Controller/AyatVC.swift; sourceTree = "<group>"; };
+
 		9663E17F2758DD0100D85379 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		96B47E0A2757EA4C00A235F8 /* Quran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B47E0D2757EA4C00A235F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +73,9 @@
 				96B47E112757EA4C00A235F8 /* ViewController.swift */,
 				96B47E242757F51C00A235F8 /* Api.swift */,
 				96B47E132757EA4C00A235F8 /* Main.storyboard */,
+
 				1BA8732F275AC9D0006DEEAB /* AyatVC.swift */,
+
 				9663E17F2758DD0100D85379 /* TableViewController.swift */,
 				96B47E192757EA4D00A235F8 /* Assets.xcassets */,
 				96B47E1B2757EA4D00A235F8 /* LaunchScreen.storyboard */,
@@ -155,7 +161,9 @@
 				96B47E182757EA4C00A235F8 /* Quran.xcdatamodeld in Sources */,
 				96B47E0E2757EA4C00A235F8 /* AppDelegate.swift in Sources */,
 				96B47E252757F51C00A235F8 /* Api.swift in Sources */,
+
 				1BA87330275AC9D0006DEEAB /* AyatVC.swift in Sources */,
+
 				96B47E102757EA4C00A235F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
