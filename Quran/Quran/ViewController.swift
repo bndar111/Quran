@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return soar.count
@@ -21,10 +22,12 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         cell.verses_count.text = String(soar[indexPath.row].verses_count)
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
+
     @IBOutlet weak var tableView: UITableView!
     var reuslt = Quran()
     var soar : [Sorah] = []
@@ -33,6 +36,7 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         fetchData()
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,21 +59,24 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         //        let url = "https://api.quran.com/api/v4/chapters?language=en"
         //        let request = URLRequest(url: URL(string: url)!)
         session.dataTask(with: request) { (data, res, err) in
+
             
             do {
                 let jsonDecoder = JSONDecoder()
                 let decodedRes = try jsonDecoder.decode(Quran.self, from: data!)
+
                 self.reuslt = decodedRes
                 print(decodedRes)
                 
                 for s in self.reuslt.chapters {
                     self.soar.append(s)
                     print(s)
+
                 }
             } catch {
                 print(err?.localizedDescription)
             }
-        }.resume()
+
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -78,12 +85,11 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
 }
 class TableCell : UITableViewCell {
 
+    @IBOutlet weak var id: UILabel!
     
- 
     @IBOutlet weak var revelation_place: UILabel!
     @IBOutlet weak var name_arabic: UILabel!
     
-    @IBOutlet weak var id: UILabel!
-   
+
     @IBOutlet weak var verses_count: UILabel!
 }
