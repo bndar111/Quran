@@ -29,12 +29,12 @@ class AyatVC: UIViewController {
         contentLbl.text = "Loading Ayat AlQuran"
     }
     func getAyat(){
-        defer {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                
-//                self.contentLbl.text = self.ayat.joined(separator: "(*)")
-            }
-        }
+//        defer {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//
+////                self.contentLbl.text = self.ayat.joined(separator: "(*)")
+//            }
+//        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
         
             for ayah in self.api.ayat{
@@ -67,23 +67,23 @@ class AyatVC: UIViewController {
     */
 
 }
-@IBDesignable extension UIView {
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            guard let cgColor = layer.borderColor else {
-                return nil
-            }
-            return UIColor(cgColor: cgColor)
-        }
-        set { layer.borderColor = newValue?.cgColor }
-    }
-
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
-    }
-}
+//@IBDesignable extension UIView {
+//    @IBInspectable var borderColor: UIColor? {
+//        get {
+//            guard let cgColor = layer.borderColor else {
+//                return nil
+//            }
+//            return UIColor(cgColor: cgColor)
+//        }
+//        set { layer.borderColor = newValue?.cgColor }
+//    }
+//
+//    @IBInspectable var borderWidth: CGFloat {
+//        get {
+//            return layer.borderWidth
+//        }
+//        set {
+//            layer.borderWidth = newValue
+//        }
+//    }
+//}
