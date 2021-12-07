@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; configuration.title = "Search"; ObjectID = "ETj-dm-dHS"; */
+"ETj-dm-dHS.configuration.title" = "Search";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ETj-dm-dHS"; */
+"ETj-dm-dHS.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "115"; ObjectID = "GTq-iL-8Jr"; */
+"GTq-iL-8Jr.text" = "115";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Nub-Vg-gcD"; */
+"Nub-Vg-gcD.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Q7w-TZ-drH"; */
+"Q7w-TZ-drH.title" = "Item";
+
+/* Class = "UILabel"; text = "Loding Data"; ObjectID = "WU5-cp-jYm"; */
+"WU5-cp-jYm.text" = "Loding Data";
+
+/* Class = "UILabel"; text = "566"; ObjectID = "bKg-1r-PoS"; */
+"bKg-1r-PoS.text" = "566";
+
+/* Class = "UILabel"; text = "114"; ObjectID = "fyq-jK-yuM"; */
+"fyq-jK-yuM.text" = "114";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "hPH-nt-KyK"; */
+"hPH-nt-KyK.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jym-BV-q27"; */
+"jym-BV-q27.text" = "Label";

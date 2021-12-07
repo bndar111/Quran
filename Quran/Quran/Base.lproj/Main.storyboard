@@ -110,36 +110,57 @@
         <!--Item-->
         <scene sceneID="lFc-hd-H5X">
             <objects>
-                <viewController id="J7X-eR-imU" sceneMemberID="viewController">
+                <viewController id="J7X-eR-imU" customClass="SearchVC" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brI-hy-wbL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" spacing="218" translatesAutoresizingMaskIntoConstraints="NO" id="VWD-cD-BjH">
-                                <rect key="frame" x="54" y="117" width="291.5" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-Wc-4y4">
+                                <rect key="frame" x="20" y="309.5" width="374" height="277"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWB-Jm-f76">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-iv-79Z">
-                                        <rect key="frame" x="259.5" y="0.0" width="32" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-Ja-dC5">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="216"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-js-hbu">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="216"/>
+                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vi2-bR-eTa">
+                                                <rect key="frame" x="304" y="0.0" width="70" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="fbT-46-hWw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETj-dm-dHS">
+                                        <rect key="frame" x="0.0" y="246" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                                        <connections>
+                                            <action selector="onClickSearch:" destination="J7X-eR-imU" eventType="touchUpInside" id="xY2-vU-kN6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oGs-sO-PLG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rkv-Wc-4y4" firstAttribute="leading" secondItem="oGs-sO-PLG" secondAttribute="leading" constant="20" id="n7U-h4-PGD"/>
+                            <constraint firstItem="oGs-sO-PLG" firstAttribute="trailing" secondItem="Rkv-Wc-4y4" secondAttribute="trailing" constant="20" id="q0V-lg-dbT"/>
+                            <constraint firstItem="Rkv-Wc-4y4" firstAttribute="centerY" secondItem="brI-hy-wbL" secondAttribute="centerY" id="xfH-OC-osY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="magnifyingglass" catalog="system" id="Q7w-TZ-drH"/>
+                    <connections>
+                        <outlet property="queryPicker" destination="sRX-js-hbu" id="9ug-tC-g5t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHd-AI-4Po" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.753623188406" y="581.91964285714278"/>
+            <point key="canvasLocation" x="1692.753623188406" y="581.25"/>
         </scene>
         <!--AyatVC-->
         <scene sceneID="VCw-7I-cWg">

@@ -22,7 +22,8 @@ class AyatVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        api.fetchAyat(sorahNum, "", "", "", "", "")
+//        api.fetchAyat(sorahNum, "", "", "", "", "")
+        api.fetchAyat()
         getAyat()
         print(sorahNum)
 
@@ -30,23 +31,31 @@ class AyatVC: UIViewController {
         pageNum.text = sorahNum
     }
     func getAyat(){
-        defer {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                let str = self.ayat.map{"\($0.text_uthmani_simple) ⦕\($0.verse_key.split(separator: ":").last!)⦖ "}
-                self.contentLbl.text = str.joined()
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+            let str = self.api.ayat.map{"\($0.text_uthmani_simple) ⦕\($0.verse_key.split(separator: ":").last!)⦖ "}
+            self.contentLbl.text = str.joined()
+            print("ayat number: \(self.api.ayat.count)")
+            
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-        
-            for ayah in self.api.ayat{
-                self.ayat.append(ayah)
-                print(ayah.text_uthmani_simple + ayah.verse_key.split(separator: ":").last!)
-                
-            }
-        }
+//        defer {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                let str = self.ayat.map{"\($0.text_uthmani_simple) ⦕\($0.verse_key.split(separator: ":").last!)⦖ "}
+//                self.contentLbl.text = str.joined()
+//            }
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//
+//            for ayah in self.api.ayat{
+//                self.ayat.append(ayah)
+//                print(ayah.text_uthmani_simple + ayah.verse_key.split(separator: ":").last!)
+//
+//            }
+//        }
         
     }
-    
+    // MARK: save Al Quran in CoreData
+    // add function to store data in Core Data
+    // create view controller
 
     /*
     // MARK: - Navigation
