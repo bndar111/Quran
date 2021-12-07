@@ -107,25 +107,30 @@
             </objects>
             <point key="canvasLocation" x="1710.144927536232" y="-62.276785714285708"/>
         </scene>
-        <!--Item-->
+        <!--SearchVC-->
         <scene sceneID="lFc-hd-H5X">
             <objects>
-                <viewController id="J7X-eR-imU" customClass="SearchVC" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SearchVC" id="J7X-eR-imU" customClass="SearchVC" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brI-hy-wbL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-Wc-4y4">
-                                <rect key="frame" x="20" y="309.5" width="374" height="277"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-Wc-4y4">
+                                <rect key="frame" x="20" y="305.5" width="374" height="285"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-Ja-dC5">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-js-hbu">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="216"/>
-                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Click Me" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCX-58-IFz">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="J7X-eR-imU" id="ndz-43-Xa6"/>
+                                                </connections>
+                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vi2-bR-eTa">
-                                                <rect key="frame" x="304" y="0.0" width="70" height="216"/>
+                                                <rect key="frame" x="304" y="0.0" width="70" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="fbT-46-hWw"/>
                                                 </constraints>
@@ -134,8 +139,15 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-js-hbu">
+                                        <rect key="frame" x="0.0" y="36" width="374" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="J7X-eR-imU" id="Psp-Ws-WOU"/>
+                                            <outlet property="delegate" destination="J7X-eR-imU" id="0eR-Ih-pUU"/>
+                                        </connections>
+                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETj-dm-dHS">
-                                        <rect key="frame" x="0.0" y="246" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="254" width="374" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Search"/>
                                         <connections>
@@ -155,7 +167,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="magnifyingglass" catalog="system" id="Q7w-TZ-drH"/>
                     <connections>
+                        <outlet property="input" destination="Vi2-bR-eTa" id="OGH-yj-7fn"/>
                         <outlet property="queryPicker" destination="sRX-js-hbu" id="9ug-tC-g5t"/>
+                        <outlet property="textBox" destination="kCX-58-IFz" id="bog-em-a09"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHd-AI-4Po" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,10 +193,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHE-bE-olZ">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loding Data" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU5-cp-jYm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU5-cp-jYm">
                                                 <rect key="frame" x="8" y="0.0" width="336" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Loding Data">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
