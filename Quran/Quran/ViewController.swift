@@ -23,6 +23,14 @@ class ViewController: UIViewController , UITableViewDelegate ,UITableViewDataSou
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ayatVC = storyboard?.instantiateViewController(withIdentifier: "ayatID") as! AyatVC
+        ayatVC.sorahNum = String(soar[indexPath.row].id)
+
+        print("Sorah number \(String(soar[indexPath.row].id)) is selecte")
+        
+        self.navigationController?.show(ayatVC, sender: self)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
